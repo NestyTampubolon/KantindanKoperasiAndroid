@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">KantinKoperasi</string>
+    <string name="home">Home</string>
+    <string name="keranjang">Keranjang</string>
+    <string name="akun">Akun</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="riwayat_belanja">Riwayat belanja</string>
+    <string name="daftar_keranjang">Daftar Keranjang</string>
+    <string name="kategori">Kategori</string>
+    <string name="daftar_makanan_dan_minuman">Daftar Makanan dan Minuman</string>
+    <string name="daftar_barang_dan_snack">Daftar Barang dan Snack</string>
 </resources>
