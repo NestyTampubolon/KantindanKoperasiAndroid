@@ -15,6 +15,12 @@
         android:theme="@style/Theme.KantinKoperasi"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".KeranjangMakanan"
+            android:exported="false" />
+        <activity
+            android:name=".MakananDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".BarangActivity"
             android:exported="false" />
         <activity
