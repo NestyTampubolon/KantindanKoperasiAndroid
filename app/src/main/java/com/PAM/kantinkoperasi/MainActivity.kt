@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.PAM.kantinkoperasi.fragment.HomeFragment
@@ -27,8 +29,16 @@ class MainActivity : AppCompatActivity() {
     private var active: Fragment = fragmentHome
     private lateinit var s: SharedPref
 
+    private val viewModel: MainViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen().apply {
+            setKeepVisibleCondition{
+                viewModel.isLoading.value
+            }
+        }
+
         setContentView(R.layout.activity_main)
 
         s = SharedPref(this)
