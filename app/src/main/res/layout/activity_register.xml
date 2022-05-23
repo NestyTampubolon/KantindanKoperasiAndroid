@@ -7,6 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".LoginActivity"
+    android:background="@drawable/bg_putih"
     android:layout_margin="15dp">
 
     <TextView

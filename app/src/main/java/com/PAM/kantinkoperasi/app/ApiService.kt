@@ -32,4 +32,14 @@ interface ApiService {
     @GET("barang")
     fun indexBarang(): Call<ResponModel>
 
+
+    @FormUrlEncoded
+    @POST("tambahkeranjang")
+    fun tambahkeranjang(
+        @Field("id_user") id_user: String,
+        @Field("id_makanan_minuman") id_makanan_minuman: String,
+        @Field("kuantitas") kuantitas: String,
+        @Field("total") total: String,
+    ): Call<ResponseBody>
+
 }

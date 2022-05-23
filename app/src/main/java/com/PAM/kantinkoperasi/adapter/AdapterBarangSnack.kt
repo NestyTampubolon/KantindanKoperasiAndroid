@@ -6,11 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.PAM.kantinkoperasi.BarangActivity
-import com.PAM.kantinkoperasi.MakananActivity
 import com.PAM.kantinkoperasi.R
 import com.PAM.kantinkoperasi.helper.Helper
 import com.PAM.kantinkoperasi.model.BarangSnack
-import com.PAM.kantinkoperasi.model.MakananMinuman
 
 class AdapterBarangSnack(var activity: BarangActivity, var data:ArrayList<BarangSnack>): RecyclerView.Adapter<AdapterBarangSnack.Holder>(){
 

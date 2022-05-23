@@ -7,10 +7,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.PAM.kantinkoperasi.adapter.AdapterBarangSnack
-import com.PAM.kantinkoperasi.adapter.AdapterMakananMinuman
 import com.PAM.kantinkoperasi.app.ApiConfig
 import com.PAM.kantinkoperasi.model.BarangSnack
-import com.PAM.kantinkoperasi.model.MakananMinuman
 import com.PAM.kantinkoperasi.model.ResponModel
 import retrofit2.Call
 import retrofit2.Callback
