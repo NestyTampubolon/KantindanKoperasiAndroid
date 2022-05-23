@@ -4,5 +4,5 @@ class User {
     lateinit var nim:String
     var name:String = ""
     lateinit var email:String
-    var id = 0
+    var id_user = 0
 }

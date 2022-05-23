@@ -1,11 +1,9 @@
 package com.PAM.kantinkoperasi
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.CheckBox
-import android.widget.ImageView
-import android.widget.RelativeLayout
-import android.widget.TextView
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.PAM.kantinkoperasi.adapter.AdapterKeranjangMakananMinuman
@@ -99,7 +97,22 @@ class KeranjangMakanan : AppCompatActivity() {
         }
 
         btn_bayarmakanan.setOnClickListener {
+            if (s.getStatusLogin()) {
+                var isThereProduk = false
+                for (p in listMakananMinuman) {
+                    if (p.selected) isThereProduk = true
+                }
 
+                if (isThereProduk) {
+                    val intent = Intent(this, PembayaranMakananActivity::class.java)
+                    intent.putExtra("extra", "" + totalHarga)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Tidak ada produk yg terpilih", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                this.startActivity(Intent(this, LoginActivity::class.java))
+            }
         }
 
         cb_allmakanan.setOnClickListener {

@@ -12,8 +12,14 @@
         android:networkSecurityConfig="@xml/config_network"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Starting"
+        android:theme="@style/Theme.KantinKoperasi"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".SuccessMakananActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PembayaranMakananActivity"
+            android:exported="false" />
         <activity
             android:name=".KeranjangMakanan"
             android:exported="false" />

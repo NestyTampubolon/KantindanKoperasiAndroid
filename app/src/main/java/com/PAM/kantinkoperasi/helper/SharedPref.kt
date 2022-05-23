@@ -52,5 +52,4 @@ class SharedPref(activity: Activity) {
         sp.edit().clear().apply()
     }
 
-
 }

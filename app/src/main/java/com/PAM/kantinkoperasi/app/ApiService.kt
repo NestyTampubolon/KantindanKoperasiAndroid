@@ -1,12 +1,10 @@
 package com.PAM.kantinkoperasi.app
 
+import com.PAM.kantinkoperasi.model.CheckoutMakanan
 import okhttp3.ResponseBody
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
 import com.PAM.kantinkoperasi.model.ResponModel
-import retrofit2.http.GET
+import retrofit2.http.*
 
 interface ApiService {
     @FormUrlEncoded
@@ -42,4 +40,8 @@ interface ApiService {
         @Field("total") total: String,
     ): Call<ResponseBody>
 
+    @POST("checkoutmakanan")
+    fun checkoutmakanan(
+        @Body data: CheckoutMakanan
+    ): Call<ResponModel>
 }
