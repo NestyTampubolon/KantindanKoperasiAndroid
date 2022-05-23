@@ -3,6 +3,7 @@ package com.PAM.kantinkoperasi
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
@@ -33,11 +34,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        installSplashScreen().apply {
-            setKeepVisibleCondition{
-                viewModel.isLoading.value
-            }
-        }
 
         setContentView(R.layout.activity_main)
 

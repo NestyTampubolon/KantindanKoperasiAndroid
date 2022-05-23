@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/activity_splash.xml" value="0.11203703703703703" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/drawable/bg1.xml" value="0.1935" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/drawable/bg2.xml" value="0.1935" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/drawable/bg3.xml" value="0.1935" />
@@ -36,10 +37,18 @@
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/xml/config_network.xml" value="0.36302083333333335" />
         <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/drawable/bg1.xml" value="0.1" />
         <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/drawable/ic_logopam.xml" value="0.12" />
+        <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/drawable/ic_web_1920___2.xml" value="0.1" />
         <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/drawable/splash_image.xml" value="0.1" />
-        <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/layout/activity_main.xml" value="0.12447916666666667" />
+        <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/layout/activity_barang.xml" value="0.25" />
+        <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/layout/activity_makanan.xml" value="0.24947916666666667" />
+        <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/layout/activity_splash.xml" value="0.264" />
         <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/layout/activity_splash_screen.xml" value="0.1796875" />
         <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/layout/activity_splash_screen2.xml" value="0.1" />
+        <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/layout/fragment_akun.xml" value="0.25" />
+        <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/layout/fragment_home.xml" value="0.25" />
       </map>
     </option>
   </component>
