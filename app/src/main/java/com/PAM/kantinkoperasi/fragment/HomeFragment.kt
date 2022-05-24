@@ -10,10 +10,7 @@ import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.core.app.NotificationCompat.getVisibility
-import com.PAM.kantinkoperasi.BarangActivity
-import com.PAM.kantinkoperasi.MainActivity
-import com.PAM.kantinkoperasi.MakananActivity
-import com.PAM.kantinkoperasi.R
+import com.PAM.kantinkoperasi.*
 import com.PAM.kantinkoperasi.helper.SharedPref
 
 
@@ -46,6 +43,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         linearLayout2.setOnClickListener {
             val intent = Intent(activity, BarangActivity::class.java)
+            startActivity(intent)
+        }
+        linearLayout3.setOnClickListener {
+            val intent = Intent(activity, PulsaActivity::class.java)
             startActivity(intent)
         }
 

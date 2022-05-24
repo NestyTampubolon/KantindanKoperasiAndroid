@@ -23,6 +23,9 @@ interface ApiService {
         @Field("password") password: String,
     ): Call<ResponModel>
 
+    @GET("pulsa")
+    fun indexPulsa(): Call<ResponModel>
+
 
     @GET("makanan")
     fun indexMakanan(): Call<ResponModel>
