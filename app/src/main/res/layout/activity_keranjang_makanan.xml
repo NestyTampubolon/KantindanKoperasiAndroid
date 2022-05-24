@@ -19,7 +19,7 @@
             android:layout_centerInParent="true"
             android:text="Keranjang Makanan dan Minuman"
             android:textColor="@color/white"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textStyle="bold"/>
 
         <ImageView
