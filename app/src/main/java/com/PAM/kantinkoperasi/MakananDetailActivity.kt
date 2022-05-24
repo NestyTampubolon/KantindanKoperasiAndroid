@@ -12,7 +12,9 @@ import com.PAM.kantinkoperasi.helper.Helper
 import com.PAM.kantinkoperasi.helper.SharedPref
 import com.PAM.kantinkoperasi.model.MakananMinuman
 import com.PAM.kantinkoperasi.room.MyDatabase
+import com.PAM.kantinkoperasi.util.Config
 import com.google.gson.Gson
+import com.squareup.picasso.Picasso
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -32,6 +34,7 @@ class MakananDetailActivity : AppCompatActivity() {
     private lateinit var btn_keranjang : RelativeLayout
     private lateinit var btn_tambah : ImageView
     private lateinit var btn_kurang : ImageView
+    private lateinit var image : ImageView
     private lateinit var tv_jumlah : TextView
     private lateinit var btn_toKeranjang : RelativeLayout
 
@@ -46,6 +49,7 @@ class MakananDetailActivity : AppCompatActivity() {
         tv_harga = findViewById(R.id.tv_harga)
         tv_kategori = findViewById(R.id.tv_kategori)
         tv_stok = findViewById(R.id.tv_stok)
+        image = findViewById(R.id.image)
 
         btn_keranjang = findViewById(R.id.btn_keranjang)
         btn_tambah = findViewById(R.id.btn_tambah)
@@ -71,6 +75,14 @@ class MakananDetailActivity : AppCompatActivity() {
         tv_harga.text = Helper().gantiRupiah(makananminuman.harga)
         tv_kategori.text = makananminuman.kategori
         tv_stok.text = makananminuman.stok.toString()
+
+        val img = Config.productUrl + makananminuman.gambar
+        Picasso.get()
+            .load(img)
+            .placeholder(R.drawable.img_makanan)
+            .error(R.drawable.img_makanan)
+            .resize(400, 400)
+            .into(image)
 
     }
     private fun mainButton() {
