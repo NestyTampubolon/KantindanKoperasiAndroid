@@ -13,6 +13,8 @@ import com.PAM.kantinkoperasi.R
 import com.PAM.kantinkoperasi.helper.Helper
 import com.PAM.kantinkoperasi.model.MakananMinuman
 import com.PAM.kantinkoperasi.room.MyDatabase
+import com.PAM.kantinkoperasi.util.Config
+import com.squareup.picasso.Picasso
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -59,6 +61,13 @@ class AdapterKeranjangMakananMinuman(var activity: Activity, var data: ArrayList
             update(makananminuman)
         }
 
+        val image = Config.productUrl + data[position].gambar
+        Picasso.get()
+            .load(image)
+            .placeholder(R.drawable.img_makanan)
+            .error(R.drawable.img_makanan)
+            .into(holder.img_produk)
+
         holder.btn_tambah.setOnClickListener {
             jumlah++
             makananminuman.jumlah = jumlah
@@ -80,7 +89,8 @@ class AdapterKeranjangMakananMinuman(var activity: Activity, var data: ArrayList
         }
 
         holder.btn_delete.setOnClickListener {
-
+            data[position].stok += makananminuman.jumlah
+            delete(makananminuman)
             listener.onDelete(position)
         }
     }
@@ -100,7 +110,7 @@ class AdapterKeranjangMakananMinuman(var activity: Activity, var data: ArrayList
             })
     }
 
-    private fun delete(data: ArrayList<MakananMinuman>) {
+    private fun delete(data: MakananMinuman) {
         val myDb = MyDatabase.getInstance(activity)
         CompositeDisposable().add(Observable.fromCallable { myDb!!.daoKeranjangMakananMinuman().delete(data) }
             .subscribeOn(Schedulers.computation())

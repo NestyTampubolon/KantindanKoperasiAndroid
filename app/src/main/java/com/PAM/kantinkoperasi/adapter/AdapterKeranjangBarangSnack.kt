@@ -13,6 +13,8 @@ import com.PAM.kantinkoperasi.R
 import com.PAM.kantinkoperasi.helper.Helper
 import com.PAM.kantinkoperasi.model.BarangSnack
 import com.PAM.kantinkoperasi.room.MyDatabaseBarangSnack
+import com.PAM.kantinkoperasi.util.Config
+import com.squareup.picasso.Picasso
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -25,6 +27,7 @@ class AdapterKeranjangBarangSnack(var activity: Activity, var data: ArrayList<Ba
         val tv_harga = view.findViewById<TextView>(R.id.tv_harga)
         val img_produk = view.findViewById<ImageView>(R.id.img_produk)
         val layout = view.findViewById<CardView>(R.id.layoutkeranjang)
+
 
         val btn_tambah = view.findViewById<ImageView>(R.id.btn_tambah)
         val btn_kurang = view.findViewById<ImageView>(R.id.btn_kurang)
@@ -60,6 +63,13 @@ class AdapterKeranjangBarangSnack(var activity: Activity, var data: ArrayList<Ba
             update(barangsnack)
         }
 
+        val image = Config.productUrl2 + data[position].gambar
+        Picasso.get()
+            .load(image)
+            .placeholder(R.drawable.img_makanan)
+            .error(R.drawable.img_makanan)
+            .into(holder.img_produk)
+
         holder.btn_tambah.setOnClickListener {
             jumlah++
             barangsnack.jumlah = jumlah
@@ -81,7 +91,8 @@ class AdapterKeranjangBarangSnack(var activity: Activity, var data: ArrayList<Ba
         }
 
         holder.btn_delete.setOnClickListener {
-
+            data[position].stok += barangsnack.jumlah
+            delete(barangsnack)
             listener.onDelete(position)
         }
     }
@@ -101,7 +112,7 @@ class AdapterKeranjangBarangSnack(var activity: Activity, var data: ArrayList<Ba
             })
     }
 
-    private fun delete(data: ArrayList<BarangSnack>) {
+    private fun delete(data: BarangSnack) {
         val myDb = MyDatabaseBarangSnack.getInstance(activity)
         CompositeDisposable().add(Observable.fromCallable { myDb!!.daoBarangSnack().delete(data) }
             .subscribeOn(Schedulers.computation())
