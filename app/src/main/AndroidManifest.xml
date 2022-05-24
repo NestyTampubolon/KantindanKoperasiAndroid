@@ -15,6 +15,15 @@
         android:theme="@style/Theme.KantinKoperasi"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".KeranjangBarangSnack"
+            android:exported="false" />
+        <activity
+            android:name=".BarangDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".room.BarangDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".SuccessMakananActivity"
             android:exported="false" />
         <activity
@@ -22,7 +31,7 @@
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -49,8 +58,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

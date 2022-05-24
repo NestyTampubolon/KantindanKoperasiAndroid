@@ -11,7 +11,7 @@ abstract class MyDatabase : RoomDatabase() {
     abstract fun daoKeranjangMakananMinuman(): DaoKeranjangMakananMinuman // DaoKeranjang
 
     companion object {
-        private var INSTANCE: MyDatabase? = null
+        var INSTANCE: MyDatabase? = null
 
         fun getInstance(context: Context): MyDatabase? {
             if (INSTANCE == null) {
