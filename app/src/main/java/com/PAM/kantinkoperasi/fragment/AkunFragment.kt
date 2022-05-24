@@ -22,7 +22,6 @@ class AkunFragment : Fragment(R.layout.fragment_akun) {
     lateinit var s:SharedPref
 
     lateinit var btn_riwayat : RelativeLayout
-    lateinit var btn_keranjang : RelativeLayout
     lateinit var btn_logout : RelativeLayout
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -63,7 +62,7 @@ class AkunFragment : Fragment(R.layout.fragment_akun) {
 
 
         tv_nim.text = user.nim
-        tv_email.text = user.email
+        tv_email.text = user.id_user.toString()
         tv_nama.text = user.name
     }
 
@@ -73,7 +72,6 @@ class AkunFragment : Fragment(R.layout.fragment_akun) {
         tv_email = view.findViewById(R.id.tv_email)
 
         btn_riwayat = view.findViewById(R.id.btn_riwayat)
-        btn_keranjang = view.findViewById(R.id.btn_keranjang)
         btn_logout = view.findViewById(R.id.btn_logout)
     }
 }

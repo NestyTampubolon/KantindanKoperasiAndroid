@@ -61,7 +61,6 @@ class LoginActivity : AppCompatActivity() {
         ApiConfig.instanceRetrofit.login(edt_email.text.toString(),edt_password.text.toString()).enqueue(object :
             Callback<ResponModel> {
 
-
             override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
                 val respon = response.body()!!
                 if (respon.success == 1) {

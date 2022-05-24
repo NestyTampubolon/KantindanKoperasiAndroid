@@ -65,6 +65,9 @@ dependencies {
     implementation "androidx.room:room-runtime:2.4.2"
     kapt "androidx.room:room-compiler:2.4.2"
 
+    //display image
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
     //Splash Screen
     implementation 'androidx.core:core-splashscreen:1.0.0-alpha02'
     implementation 'androidx.fragment:fragment-ktx:1.1.0-beta02'

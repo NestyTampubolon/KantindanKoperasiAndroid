@@ -27,6 +27,13 @@ interface ApiService {
     @GET("makanan")
     fun indexMakanan(): Call<ResponModel>
 
+    @FormUrlEncoded
+    @PUT("makanan/updatestok/{id_makanan_minuman}")
+    fun updatestok(
+        @Path("id_makanan_minuman") id_makanan_minuman: String,
+        @Field("stok") stok: String,
+    ): Call<ResponseBody>
+
     @GET("barang")
     fun indexBarang(): Call<ResponModel>
 
