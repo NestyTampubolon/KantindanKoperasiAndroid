@@ -17,6 +17,8 @@
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/drawable/ic_remove_background.xml" value="0.1295" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/drawable/ic_remove_foreground.xml" value="0.1295" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_barang.xml" value="0.22" />
+        <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_barang_detail.xml" value="0.2630208333333333" />
+        <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_keranjang_barang_snack.xml" value="0.2630208333333333" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_keranjang_makanan.xml" value="0.22" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_login.xml" value="0.6" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />

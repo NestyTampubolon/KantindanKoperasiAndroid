@@ -7,10 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import com.PAM.kantinkoperasi.BarangActivity
-import com.PAM.kantinkoperasi.KeranjangMakanan
-import com.PAM.kantinkoperasi.MakananActivity
-import com.PAM.kantinkoperasi.R
+import com.PAM.kantinkoperasi.*
 import com.PAM.kantinkoperasi.helper.SharedPref
 
 
@@ -38,7 +35,7 @@ class KeranjangFragment : Fragment(R.layout.fragment_keranjang) {
         }
 
         linearLayout2.setOnClickListener {
-            val intent = Intent(activity, BarangActivity::class.java)
+            val intent = Intent(activity, KeranjangBarangSnack::class.java)
             startActivity(intent)
         }
 

@@ -11,21 +11,23 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.PAM.kantinkoperasi.R
 import com.PAM.kantinkoperasi.helper.Helper
-import com.PAM.kantinkoperasi.model.MakananMinuman
-import com.PAM.kantinkoperasi.room.MyDatabase
+import com.PAM.kantinkoperasi.model.BarangSnack
+import com.PAM.kantinkoperasi.room.MyDatabaseBarangSnack
 import com.PAM.kantinkoperasi.util.Config
 import com.squareup.picasso.Picasso
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.internal.operators.observable.ObservableError
 import io.reactivex.schedulers.Schedulers
 
-class AdapterKeranjangMakananMinuman(var activity: Activity, var data: ArrayList<MakananMinuman>, var listener: Listeners) : RecyclerView.Adapter<AdapterKeranjangMakananMinuman.Holder>() {
+class AdapterKeranjangBarangSnack(var activity: Activity, var data: ArrayList<BarangSnack>, var listener: Listeners) : RecyclerView.Adapter<AdapterKeranjangBarangSnack.Holder>() {
     class Holder(view: View) : RecyclerView.ViewHolder(view) {
         val tv_nama = view.findViewById<TextView>(R.id.tv_nama)
         val tv_harga = view.findViewById<TextView>(R.id.tv_harga)
         val img_produk = view.findViewById<ImageView>(R.id.img_produk)
         val layout = view.findViewById<CardView>(R.id.layoutkeranjang)
+
 
         val btn_tambah = view.findViewById<ImageView>(R.id.btn_tambah)
         val btn_kurang = view.findViewById<ImageView>(R.id.btn_kurang)
@@ -46,22 +48,22 @@ class AdapterKeranjangMakananMinuman(var activity: Activity, var data: ArrayList
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
 
-        val makananminuman = data[position]
-        val harga = Integer.valueOf(makananminuman.harga)
+        val barangsnack = data[position]
+        val harga = Integer.valueOf(barangsnack.harga)
 
-        holder.tv_nama.text = makananminuman.nama
-        holder.tv_harga.text = Helper().gantiRupiah(harga * makananminuman.jumlah)
+        holder.tv_nama.text = barangsnack.nama
+        holder.tv_harga.text = Helper().gantiRupiah(harga * barangsnack.jumlah)
 
         var jumlah = data[position].jumlah
         holder.tv_jumlah.text = jumlah.toString()
 
-        holder.checkBox.isChecked = makananminuman.selected
+        holder.checkBox.isChecked = barangsnack.selected
         holder.checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
-            makananminuman.selected = isChecked
-            update(makananminuman)
+            barangsnack.selected = isChecked
+            update(barangsnack)
         }
 
-        val image = Config.productUrl + data[position].gambar
+        val image = Config.productUrl2 + data[position].gambar
         Picasso.get()
             .load(image)
             .placeholder(R.drawable.img_makanan)
@@ -70,8 +72,8 @@ class AdapterKeranjangMakananMinuman(var activity: Activity, var data: ArrayList
 
         holder.btn_tambah.setOnClickListener {
             jumlah++
-            makananminuman.jumlah = jumlah
-            update(makananminuman)
+            barangsnack.jumlah = jumlah
+            update(barangsnack)
 
             holder.tv_jumlah.text = jumlah.toString()
             holder.tv_harga.text = Helper().gantiRupiah(harga * jumlah)
@@ -81,16 +83,16 @@ class AdapterKeranjangMakananMinuman(var activity: Activity, var data: ArrayList
             if (jumlah <= 1) return@setOnClickListener
             jumlah--
 
-            makananminuman.jumlah = jumlah
-            update(makananminuman)
+            barangsnack.jumlah = jumlah
+            update(barangsnack)
 
             holder.tv_jumlah.text = jumlah.toString()
             holder.tv_harga.text = Helper().gantiRupiah(harga * jumlah)
         }
 
         holder.btn_delete.setOnClickListener {
-            data[position].stok += makananminuman.jumlah
-            delete(makananminuman)
+            data[position].stok += barangsnack.jumlah
+            delete(barangsnack)
             listener.onDelete(position)
         }
     }
@@ -100,9 +102,9 @@ class AdapterKeranjangMakananMinuman(var activity: Activity, var data: ArrayList
         fun onDelete(position: Int)
     }
 
-    private fun update(data: MakananMinuman) {
-        val myDb = MyDatabase.getInstance(activity)
-        CompositeDisposable().add(Observable.fromCallable { myDb!!.daoKeranjangMakananMinuman().update(data) }
+    private fun update(data: BarangSnack) {
+        val myDb = MyDatabaseBarangSnack.getInstance(activity)
+        CompositeDisposable().add(Observable.fromCallable { myDb!!.daoBarangSnack().update(data) }
             .subscribeOn(Schedulers.computation())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
@@ -110,12 +112,13 @@ class AdapterKeranjangMakananMinuman(var activity: Activity, var data: ArrayList
             })
     }
 
-    private fun delete(data: MakananMinuman) {
-        val myDb = MyDatabase.getInstance(activity)
-        CompositeDisposable().add(Observable.fromCallable { myDb!!.daoKeranjangMakananMinuman().delete(data) }
+    private fun delete(data: BarangSnack) {
+        val myDb = MyDatabaseBarangSnack.getInstance(activity)
+        CompositeDisposable().add(Observable.fromCallable { myDb!!.daoBarangSnack().delete(data) }
             .subscribeOn(Schedulers.computation())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
             })
     }
+
 }
