@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.core.app.NotificationCompat.getVisibility
 import com.PAM.kantinkoperasi.BarangActivity
@@ -21,6 +22,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     lateinit var linearLayout2 : LinearLayout
     lateinit var linearLayout3 : LinearLayout
 
+//    lateinit var text3 : TextView
+//    lateinit var btn_riwayat : RelativeLayout
+
     lateinit var s:SharedPref
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -30,6 +34,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         s = SharedPref(requireActivity())
 
         mainButton()
+//        setData()
         return view
     }
 
@@ -45,6 +50,19 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
 
     }
+
+//    fun setData() {
+//
+//        if (s.getUser() == null) {
+//            return
+//        }
+//
+//        val user = s.getUser()!!
+//
+//
+//        text3.text = user.name
+//    }
+
     private fun init(view: View){
         linearLayout1 = view.findViewById(R.id.linearLayout1)
         linearLayout2 = view.findViewById(R.id.linearLayout2)

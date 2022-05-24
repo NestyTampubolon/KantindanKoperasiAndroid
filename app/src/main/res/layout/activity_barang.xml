@@ -10,8 +10,9 @@
     <TextView
         android:textSize="25dp"
         android:textStyle="bold"
-        android:textColor="@color/purple_500"
-        android:layout_margin="10dp"
+        android:textColor="@color/white"
+        android:padding="10dp"
+        android:background="@color/orange1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"

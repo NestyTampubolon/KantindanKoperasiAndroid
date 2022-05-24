@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/orange1"
         android:orientation="horizontal"
         android:padding="10dp">
 
@@ -19,13 +19,13 @@
             android:layout_centerInParent="true"
             android:text="Keranjang"
             android:textColor="@color/white"
-            android:textSize="16dp"
+            android:textSize="25dp"
             android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/btn_deletemakanan"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"

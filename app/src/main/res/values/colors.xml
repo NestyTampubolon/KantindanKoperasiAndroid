@@ -12,7 +12,12 @@
     <color name="colorPrimary">#001342</color>
     <color name="colorPrimaryDark">#001342</color>
     <color name="orange">#FF9800</color>
-
+    <color name="orange1">#ff6600</color>
+    <color name="orange2">#ff8533</color>
+    <color name="orange3">#ffa366</color>
+    <color name="orange4">#ffc299</color>
     <color name="cyan">#ccf2ff</color>
+
+
 
 </resources>

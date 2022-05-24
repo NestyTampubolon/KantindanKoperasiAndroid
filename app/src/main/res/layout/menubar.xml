@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            app:contentInsetStartWithNavigation="0dp"
+            app:paddingEnd="5dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
+
+        <RelativeLayout
+            android:id="@+id/btn_toKeranjang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/logo"
+                android:layout_margin="10dp"/>
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@+id/logo"
+                android:text="KantinKoperasi"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/btn_history"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@id/text3"
+                app:srcCompat="@drawable/ic_baseline_history_24" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</com.google.android.material.appbar.AppBarLayout>

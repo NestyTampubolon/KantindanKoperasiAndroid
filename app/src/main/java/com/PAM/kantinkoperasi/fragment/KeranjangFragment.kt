@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
+import android.widget.TextView
 import com.PAM.kantinkoperasi.*
 import com.PAM.kantinkoperasi.helper.SharedPref
 
@@ -15,6 +17,9 @@ class KeranjangFragment : Fragment(R.layout.fragment_keranjang) {
     lateinit var linearLayout1 : LinearLayout
     lateinit var linearLayout2 : LinearLayout
     lateinit var linearLayout3 : LinearLayout
+
+//    lateinit var text3 : TextView
+//    lateinit var btn_riwayat : RelativeLayout
 
     lateinit var s: SharedPref
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -25,6 +30,7 @@ class KeranjangFragment : Fragment(R.layout.fragment_keranjang) {
         s = SharedPref(requireActivity())
 
         mainButton()
+//        setData()
         return view
     }
 
@@ -41,6 +47,17 @@ class KeranjangFragment : Fragment(R.layout.fragment_keranjang) {
 
     }
 
+//    fun setData() {
+//
+//        if (s.getUser() == null) {
+//            return
+//        }
+//
+//        val user = s.getUser()!!
+//
+//
+//        text3.text = user.name
+//    }
 
     private fun init(view: View){
         linearLayout1 = view.findViewById(R.id.linearLayout1)
