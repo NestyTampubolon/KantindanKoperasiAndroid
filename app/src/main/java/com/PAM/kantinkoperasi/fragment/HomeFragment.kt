@@ -18,6 +18,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     lateinit var linearLayout1 : LinearLayout
     lateinit var linearLayout2 : LinearLayout
     lateinit var linearLayout3 : LinearLayout
+//    lateinit var linearLayout4 : LinearLayout
 
 //    lateinit var text3 : TextView
 //    lateinit var btn_riwayat : RelativeLayout
@@ -50,6 +51,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             startActivity(intent)
         }
 
+//        linearLayout4.setOnClickListener{
+//            val intent = Intent(activity, BookingRuanganActivity::class.java)
+//            startActivity(intent)
+//        }
+
+
+
     }
 
 //    fun setData() {
@@ -68,6 +76,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         linearLayout1 = view.findViewById(R.id.linearLayout1)
         linearLayout2 = view.findViewById(R.id.linearLayout2)
         linearLayout3 = view.findViewById(R.id.linearLayout3)
+//        linearLayout4 = view.findViewById(R.id.linearLayout4)
     }
 
 
