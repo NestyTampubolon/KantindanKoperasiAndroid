@@ -41,8 +41,8 @@
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
                     android:hint="Nama Penerima"
-                    android:textSize="14dp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
 
             </RelativeLayout>
             <TextView
