@@ -55,4 +55,15 @@ interface ApiService {
     fun checkoutmakanan(
         @Body data: CheckoutMakanan
     ): Call<ResponModel>
+
+    @FormUrlEncoded
+    @POST("bookingruangan")
+    fun bookingruangan(
+        @Field("id_user") id_user: String,
+        @Field("tanggal_pemesanan") tanggal_pemesanan: String,
+        @Field("nama_ruangan") nama_ruangan: String,
+        @Field("jam_mulai") jam_mulai: String,
+        @Field("jam_selesai") jam_selesai: String,
+        @Field("deskripsi") deskripsi: String,
+    ): Call<ResponseBody>
 }
