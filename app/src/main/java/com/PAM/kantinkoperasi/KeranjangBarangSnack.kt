@@ -105,6 +105,7 @@ class KeranjangBarangSnack : AppCompatActivity() {
                 if (isThereProduk) {
                     val intent = Intent(this, PembayaranMakananActivity::class.java)
                     intent.putExtra("extra", "" + totalHarga)
+                    intent.putExtra("jenis", "barang")
                     startActivity(intent)
                 } else {
                     Toast.makeText(this, "Tidak ada produk yg terpilih", Toast.LENGTH_SHORT).show()
