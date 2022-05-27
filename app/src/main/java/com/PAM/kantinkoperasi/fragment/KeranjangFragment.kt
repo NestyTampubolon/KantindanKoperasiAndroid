@@ -44,6 +44,10 @@ class KeranjangFragment : Fragment(R.layout.fragment_keranjang) {
             val intent = Intent(activity, KeranjangBarangSnack::class.java)
             startActivity(intent)
         }
+        linearLayout3.setOnClickListener {
+            val intent = Intent(activity, Keranjang_Pulsa::class.java)
+            startActivity(intent)
+        }
 
     }
 

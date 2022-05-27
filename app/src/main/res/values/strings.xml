@@ -10,5 +10,13 @@
     <string name="kategori">Kategori</string>
     <string name="daftar_makanan_dan_minuman">Daftar Makanan dan Minuman</string>
     <string name="daftar_barang_dan_snack">Daftar Barang dan Snack</string>
+    <string name="booking_ruangan">Booking Ruangan</string>
+    <string name="tanggal_pemesanan">Tanggal Pemesanan</string>
+    <string name="nama_ruangan">Nama Ruangan</string>
+    <string name="nama_pemesanan">Nama Pemesan</string>
+    <string name="jam_mulai">Jam Mulai</string>
+    <string name="jam_selesai">Jam Selesai</string>
+    <string name="deskripsi_booking">Deskripsi Booking</string>
+    <string name="status">Status</string>
     <string name="daftar_pulsa">Daftar Pulsa</string>
 </resources>

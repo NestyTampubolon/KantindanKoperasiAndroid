@@ -16,7 +16,7 @@ import com.PAM.kantinkoperasi.helper.SharedPref
 class AkunFragment : Fragment(R.layout.fragment_akun) {
 
     lateinit var tv_nama : TextView
-    lateinit var tv_nim : TextView
+    lateinit var tv_noHandphone: TextView
     lateinit var tv_email : TextView
 
     lateinit var s:SharedPref
@@ -61,14 +61,14 @@ class AkunFragment : Fragment(R.layout.fragment_akun) {
         val user = s.getUser()!!
 
 
-        tv_nim.text = user.nim
-        tv_email.text = user.id_user.toString()
+        tv_noHandphone.text = user.noHandphone
+        tv_email.text = user.email
         tv_nama.text = user.name
     }
 
     private fun init(view: View){
         tv_nama = view.findViewById(R.id.tv_nama)
-        tv_nim = view.findViewById(R.id.tv_nim)
+        tv_noHandphone = view.findViewById(R.id.tv_noHandphone)
         tv_email = view.findViewById(R.id.tv_email)
 
         btn_riwayat = view.findViewById(R.id.btn_riwayat)

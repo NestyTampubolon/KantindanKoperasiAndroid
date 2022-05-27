@@ -46,6 +46,7 @@ class PembayaranMakananActivity : AppCompatActivity() {
         totalHarga = Integer.valueOf(intent.getStringExtra("extra")!!)
         tv_total.text = Helper().gantiRupiah(totalHarga)
 
+
         mainButton()
     }
 
@@ -100,7 +101,9 @@ class PembayaranMakananActivity : AppCompatActivity() {
                         val jsCheckout = Gson().toJson(checkout, CheckoutMakanan::class.java)
                         val intent1 = Intent(this@PembayaranMakananActivity, SuccessMakananActivity::class.java)
                         intent1.putExtra("checkout", jsCheckout)
+                        intent1.putExtra("extra", "" + totalHarga)
                         startActivity(intent1)
+
                     } else {
                         error(respon.message)
                         Toast.makeText(this@PembayaranMakananActivity, "Error:" + respon.message, Toast.LENGTH_SHORT).show()

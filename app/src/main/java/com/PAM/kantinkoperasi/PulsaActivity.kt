@@ -8,8 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.PAM.kantinkoperasi.adapter.AdapterPulsa
 import com.PAM.kantinkoperasi.app.ApiConfig
-import com.PAM.kantinkoperasi.model.MakananMinuman
-import com.PAM.kantinkoperasi.model.Pulsa
+import com.PAM.kantinkoperasi.model.Pulsa_k
 import com.PAM.kantinkoperasi.model.ResponModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -37,7 +36,7 @@ class PulsaActivity : AppCompatActivity() {
         rv_pulsa.layoutManager = GridLayoutManager(this, 2)
 
     }
-    private var listPulsa: ArrayList<Pulsa> = ArrayList()
+    private var listPulsa: ArrayList<Pulsa_k> = ArrayList()
     fun indexPulsa(){
         ApiConfig.instanceRetrofit.indexPulsa().enqueue(object : Callback<ResponModel> {
             override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {

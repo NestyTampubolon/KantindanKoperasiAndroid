@@ -34,6 +34,8 @@ class SuccessMakananActivity : AppCompatActivity() {
 
     fun setValues() {
         val jsCheckout = intent.getStringExtra("checkout")
+        nominal = Integer.valueOf(intent.getStringExtra("extra")!!)
+        tv_nominal.text = Helper().gantiRupiah(nominal)
 
         val checkoutMakanan = Gson().fromJson(jsCheckout, CheckoutMakanan::class.java)
         // hapus keranjang
@@ -41,6 +43,8 @@ class SuccessMakananActivity : AppCompatActivity() {
         for (MakananMinuman in checkoutMakanan.produks){
             myDb.daoKeranjangMakananMinuman().deleteById(MakananMinuman.id_makanan_minuman)
         }
+
+
     }
 
     override fun onBackPressed() {

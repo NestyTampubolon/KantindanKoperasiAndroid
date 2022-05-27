@@ -15,13 +15,16 @@
         android:theme="@style/Theme.KantinKoperasi"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".BookingRuanganActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PulsaActivity"
+            android:exported="false" />
+        <activity
             android:name=".KeranjangBarangSnack"
             android:exported="false" />
         <activity
             android:name=".BarangDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".room.BarangDetailActivity"
             android:exported="false" />
         <activity
             android:name=".SuccessMakananActivity"
