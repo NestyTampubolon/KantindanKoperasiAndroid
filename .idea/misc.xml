@@ -20,6 +20,23 @@
         <entry key="..\:/Android/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/item_keranjang.xml" value="0.14322916666666666" />
         <entry key="..\:/Android/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/item_makananminuman.xml" value="0.17395833333333333" />
         <entry key="..\:/Android/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/toolbar.xml" value="0.17395833333333333" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/activity_barang.xml" value="0.1" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/activity_keranjang_makanan.xml" value="0.1" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/activity_keranjang_pulsa.xml" value="0.25364583333333335" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/activity_makanan.xml" value="0.13796296296296295" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/activity_makanan_detail.xml" value="0.1" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/activity_pembayaran_makanan.xml" value="0.24537037037037038" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/activity_pembelian_pulsa.xml" value="0.1" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/activity_pulsa.xml" value="0.234375" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/activity_pulsa_detail_pemesanan.xml" value="0.1" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/activity_register.xml" value="0.24537037037037038" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/activity_success_makanan.xml" value="0.22291666666666668" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/fragment_home.xml" value="0.14473684210526316" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/item_barangsnack.xml" value="0.1" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/item_keranjang.xml" value="0.25364583333333335" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/item_keranjang_pulsa.xml" value="0.25364583333333335" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/item_makananminuman.xml" value="0.234375" />
+        <entry key="..\:/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/item_pulsa.xml" value="0.234375" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/drawable/bg1.xml" value="0.1935" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/drawable/bg2.xml" value="0.1935" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/drawable/bg3.xml" value="0.1935" />

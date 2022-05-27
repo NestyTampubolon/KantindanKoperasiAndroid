@@ -1,21 +1,23 @@
 package com.PAM.kantinkoperasi.adapter
 
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.PAM.kantinkoperasi.PulsaActivity
-import com.PAM.kantinkoperasi.R
-import com.PAM.kantinkoperasi.helper.Helper
-import com.PAM.kantinkoperasi.model.Pulsa
+import com.PAM.kantinkoperasi.*
+import com.PAM.kantinkoperasi.model.Pulsa_k
+import com.google.gson.Gson
 
-class AdapterPulsa(var activity:PulsaActivity, var data:ArrayList<Pulsa>): RecyclerView.Adapter<AdapterPulsa.Holder>(){
+class AdapterPulsa(var activity:PulsaActivity, var data:ArrayList<Pulsa_k>): RecyclerView.Adapter<AdapterPulsa.Holder>(){
 
     class Holder(view: View): RecyclerView.ViewHolder(view) {
         val tv_nominal = view.findViewById<TextView>(R.id.tv_nominal)
         val tv_harga = view.findViewById<TextView>(R.id.tv_harga)
+        val layout = view.findViewById<CardView>(R.id.item_pulsa)
 
     }
 
@@ -28,6 +30,13 @@ class AdapterPulsa(var activity:PulsaActivity, var data:ArrayList<Pulsa>): Recyc
 
         holder.tv_nominal.text = data[position].nominal
         holder.tv_harga.text = data[position].harga.toString()
+
+        holder.layout.setOnClickListener{
+            val act = Intent(activity, Pembelian_Pulsa::class.java)
+            val str = Gson().toJson(data[position], Pulsa_k::class.java)
+            act.putExtra("extra", str)
+            activity.startActivity(act)
+        }
     }
 
     override fun getItemCount(): Int {

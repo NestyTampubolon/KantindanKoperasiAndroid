@@ -6,10 +6,8 @@ class ResponModel {
     var user = User()
     var makananminumans: ArrayList<MakananMinuman> = ArrayList()
     var barangsnacks: ArrayList<BarangSnack> = ArrayList()
-    var pulsa:ArrayList<Pulsa> = ArrayList()
-
+    var pulsa:ArrayList<Pulsa_k> = ArrayList()
     var transaksis: ArrayList<PemesananMakananMinuman> = ArrayList()
-
     var transaksi = PemesananMakananMinuman()
 
 }
