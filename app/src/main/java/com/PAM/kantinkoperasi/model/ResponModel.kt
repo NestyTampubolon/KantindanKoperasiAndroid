@@ -8,8 +8,10 @@ class ResponModel {
     var barangsnacks: ArrayList<BarangSnack> = ArrayList()
     var pulsa:ArrayList<Pulsa> = ArrayList()
 
-    var transaksis: ArrayList<PemesananMakananMinuman> = ArrayList()
+    var pemesananmakananminumans : ArrayList<PemesananMakananMinuman> = ArrayList()
+    var pemesananmakananminuman = PemesananMakananMinuman()
 
-    var transaksi = PemesananMakananMinuman()
+    var bookings : ArrayList<BookingRuangan> = ArrayList()
+    var booking = BookingRuangan()
 
 }

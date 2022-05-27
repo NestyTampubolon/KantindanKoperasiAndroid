@@ -51,6 +51,7 @@ interface ApiService {
         @Field("total") total: String,
     ): Call<ResponseBody>
 
+
     @POST("checkoutmakanan")
     fun checkoutmakanan(
         @Body data: CheckoutMakanan
@@ -66,4 +67,14 @@ interface ApiService {
         @Field("jam_selesai") jam_selesai: String,
         @Field("deskripsi") deskripsi: String,
     ): Call<ResponseBody>
+
+    @GET("checkoutmakanan/user/{id}")
+    fun getRiwayatMakanan(
+        @Path("id") id: Int
+    ): Call<ResponModel>
+
+    @GET("bookingruangan/user/{id}")
+    fun getRiwayatBooking(
+        @Path("id") id: Int
+    ): Call<ResponModel>
 }

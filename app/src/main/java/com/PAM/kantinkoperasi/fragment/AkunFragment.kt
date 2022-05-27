@@ -10,6 +10,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import com.PAM.kantinkoperasi.MainActivity
 import com.PAM.kantinkoperasi.R
+import com.PAM.kantinkoperasi.RiwayatActivity
 import com.PAM.kantinkoperasi.helper.SharedPref
 
 
@@ -48,7 +49,7 @@ class AkunFragment : Fragment(R.layout.fragment_akun) {
         }
 
         btn_riwayat.setOnClickListener {
-            //startActivity(Intent(requireActivity(), RiwayatActivity::class.java))
+             startActivity(Intent(requireActivity(), RiwayatActivity::class.java))
         }
     }
 

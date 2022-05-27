@@ -29,6 +29,7 @@ class SuccessMakananActivity : AppCompatActivity() {
     fun mainButton() {
 
         btn_cekStatus.setOnClickListener {
+            startActivity(Intent(this, RiwayatActivity::class.java))
         }
     }
 
