@@ -11,10 +11,11 @@ interface ApiService {
     @FormUrlEncoded
     @POST("register")
     fun register(
-        @Field("nim") nim: String,
         @Field("name") name: String,
         @Field("email") email: String,
         @Field("password") password: String,
+        @Field("noKTP") noKTP: String,
+        @Field("noHandphone") noHandphone: String,
     ): Call<ResponseBody>
 
     @FormUrlEncoded
@@ -56,11 +57,14 @@ interface ApiService {
         @Body data: CheckoutMakanan
     ): Call<ResponModel>
 
-    @POST("checkoutpulsa")
-    fun checkoutpulsa(
-        @Body data: CheckOutPulsa
-    ): Call<ResponModel>
-
-
-
+    @FormUrlEncoded
+    @POST("bookingruangan")
+    fun bookingruangan(
+        @Field("id_user") id_user: String,
+        @Field("tanggal_pemesanan") tanggal_pemesanan: String,
+        @Field("nama_ruangan") nama_ruangan: String,
+        @Field("jam_mulai") jam_mulai: String,
+        @Field("jam_selesai") jam_selesai: String,
+        @Field("deskripsi") deskripsi: String,
+    ): Call<ResponseBody>
 }

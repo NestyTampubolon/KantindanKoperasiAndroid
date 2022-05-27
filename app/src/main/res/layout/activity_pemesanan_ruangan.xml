@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".BookingRuanganActivity"
+    android:background="@drawable/bg_putih"
+    android:layout_margin="15dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/booking_ruangan"
+        android:gravity="center"
+        android:textSize="35dp"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="86dp"
+            android:layout_height="58dp"
+            app:srcCompat="@drawable/ic_tanggal_background_foreground" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_tv">
+
+            <EditText
+                android:id="@+id/edt_tanggal_pemesanan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@null"
+                android:hint="Tanggal Pemesanan"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:focusableInTouchMode="false"
+                android:onClick="withCalender"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="86dp"
+            android:layout_height="58dp"
+            app:srcCompat="@drawable/ic_ruangan_background_foreground" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_tv">
+
+            <EditText
+                android:id="@+id/edt_nama_ruangan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@null"
+                android:hint="Nama Ruangan"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:onClick="withItemsNamaRuangan"
+                android:focusableInTouchMode="false"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="86dp"
+            android:layout_height="58dp"
+            app:srcCompat="@drawable/ic_jam_mulai_foreground_foreground" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_tv">
+
+            <EditText
+                android:id="@+id/edt_jam_mulai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@null"
+                android:hint="Jam Mulai"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:onClick="withClockStart"
+                android:focusableInTouchMode="false"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="86dp"
+            android:layout_height="58dp"
+            app:srcCompat="@drawable/ic_jam_mulai_foreground_foreground" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_tv">
+
+            <EditText
+                android:id="@+id/edt_jam_selesai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@null"
+                android:hint="Jam Selesai"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:onClick="withClockFinish"
+                android:focusableInTouchMode="false"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="86dp"
+            android:layout_height="58dp"
+            app:srcCompat="@drawable/ic_description_foreground_foreground" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_tv">
+
+            <EditText
+                android:id="@+id/edt_deskripsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@null"
+                android:hint="Deskripsi Kegiatan"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_pesan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Pesan"
+        android:onClick="Pesan"
+        android:textColor="@color/white"/>
+
+</LinearLayout>
