@@ -6,8 +6,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import com.PAM.kantinkoperasi.helper.Helper
+import com.PAM.kantinkoperasi.model.BarangSnack
+import com.PAM.kantinkoperasi.model.CheckoutBarang
 import com.PAM.kantinkoperasi.model.CheckoutMakanan
 import com.PAM.kantinkoperasi.room.MyDatabase
+import com.PAM.kantinkoperasi.room.MyDatabaseBarangSnack
 import com.google.gson.Gson
 
 class SuccessMakananActivity : AppCompatActivity() {
@@ -37,13 +40,25 @@ class SuccessMakananActivity : AppCompatActivity() {
         val jsCheckout = intent.getStringExtra("checkout")
         nominal = Integer.valueOf(intent.getStringExtra("extra")!!)
         tv_nominal.text = Helper().gantiRupiah(nominal)
+        val jenis = intent.getStringExtra("jenis")
 
-        val checkoutMakanan = Gson().fromJson(jsCheckout, CheckoutMakanan::class.java)
-        // hapus keranjang
-        val myDb = MyDatabase.getInstance(this)!!
-        for (MakananMinuman in checkoutMakanan.produks){
-            myDb.daoKeranjangMakananMinuman().deleteById(MakananMinuman.id_makanan_minuman)
+
+        if(jenis == "barang"){
+            val checkoutBarang = Gson().fromJson(jsCheckout, CheckoutBarang::class.java)
+            // hapus keranjang
+            val myDb = MyDatabaseBarangSnack.getInstance(this)!!
+            for (BarangSnack in checkoutBarang.produks){
+                myDb.daoBarangSnack().deleteById(BarangSnack.id_barang_snack)
+            }
+        }else if(jenis == "produk"){
+            val checkoutMakanan = Gson().fromJson(jsCheckout, CheckoutMakanan::class.java)
+            // hapus keranjang
+            val myDb = MyDatabase.getInstance(this)!!
+            for (MakananMinuman in checkoutMakanan.produks){
+                myDb.daoKeranjangMakananMinuman().deleteById(MakananMinuman.id_makanan_minuman)
+            }
         }
+
 
 
     }

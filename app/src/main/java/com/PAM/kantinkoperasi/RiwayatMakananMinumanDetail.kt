@@ -22,6 +22,7 @@ class RiwayatMakananMinumanDetail : AppCompatActivity() {
     private lateinit var tv_tanggal_pembayaran : TextView
     private lateinit var tv_nama_penerima : TextView
     private lateinit var tv_total_pembayaran : TextView
+    private lateinit var tv_nomor_telephone: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +32,7 @@ class RiwayatMakananMinumanDetail : AppCompatActivity() {
         tv_tanggal_pembayaran = findViewById(R.id.tv_tanggal_pembayaran)
         tv_nama_penerima = findViewById(R.id.tv_nama_penerima)
         tv_total_pembayaran = findViewById(R.id.tv_total_pembayaran)
+        tv_nomor_telephone = findViewById(R.id.tv_nomor_telephone)
 
         val json = intent.getStringExtra("transaksi")
         pemesananmakananminuman = Gson().fromJson(json, PemesananMakananMinuman::class.java)
@@ -46,6 +48,7 @@ class RiwayatMakananMinumanDetail : AppCompatActivity() {
         tv_tanggal_pembayaran.text = Helper().convertTanggal(t.tanggal_pemesanan_makanan_minuman, formatBaru)
 
         tv_nama_penerima.text = t.nama_penerima
+        tv_nomor_telephone.text = t.nomor_telephone
         tv_total_pembayaran.text = Helper().gantiRupiah(Integer.valueOf(t.total_pembayaran))
 
 

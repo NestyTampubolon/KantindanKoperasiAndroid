@@ -15,6 +15,9 @@
         android:theme="@style/Theme.KantinKoperasi"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".PembayaranBarangActivity"
+            android:exported="false" />
+        <activity
             android:name=".RiwayatBookingRuanganDetailActivity"
             android:exported="false" />
         <activity

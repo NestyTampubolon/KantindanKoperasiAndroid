@@ -88,7 +88,7 @@ class PembayaranMakananActivity : AppCompatActivity() {
                 checkout.nama_penerima = edt_nama.text.toString()
                 checkout.nomor_telephone = edt_phone.text.toString()
                 checkout.catatan = edt_catatan.text.toString()
-                checkout.barangs = barangs
+                checkout.produks = barangs
 
                 ApiConfig.instanceRetrofit.checkoutbarang(checkout).enqueue(object : Callback<ResponModel> {
                     override fun onFailure(call: Call<ResponModel>, t: Throwable) {
@@ -105,6 +105,8 @@ class PembayaranMakananActivity : AppCompatActivity() {
                             val jsCheckout = Gson().toJson(checkout, CheckoutBarang::class.java)
                             val intent1 = Intent(this@PembayaranMakananActivity, SuccessMakananActivity::class.java)
                             intent1.putExtra("checkout", jsCheckout)
+                            intent1.putExtra("extra", "" + totalHarga)
+                            intent1.putExtra("jenis", "barang")
                             startActivity(intent1)
                         } else {
                             error(respon.message)
@@ -154,6 +156,8 @@ class PembayaranMakananActivity : AppCompatActivity() {
                             val jsCheckout = Gson().toJson(checkout, CheckoutMakanan::class.java)
                             val intent1 = Intent(this@PembayaranMakananActivity, SuccessMakananActivity::class.java)
                             intent1.putExtra("checkout", jsCheckout)
+                            intent1.putExtra("extra", "" + totalHarga)
+                            intent1.putExtra("jenis", "produk")
                             startActivity(intent1)
                         } else {
                             error(respon.message)

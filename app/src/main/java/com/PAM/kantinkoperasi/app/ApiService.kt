@@ -1,6 +1,7 @@
 package com.PAM.kantinkoperasi.app
 
 import com.PAM.kantinkoperasi.model.CheckOutPulsa
+import com.PAM.kantinkoperasi.model.CheckoutBarang
 import com.PAM.kantinkoperasi.model.CheckoutMakanan
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -56,6 +57,11 @@ interface ApiService {
     @POST("checkoutmakanan")
     fun checkoutmakanan(
         @Body data: CheckoutMakanan
+    ): Call<ResponModel>
+
+    @POST("checkoutbarang")
+    fun checkoutbarang(
+        @Body data: CheckoutBarang
     ): Call<ResponModel>
 
     @FormUrlEncoded
