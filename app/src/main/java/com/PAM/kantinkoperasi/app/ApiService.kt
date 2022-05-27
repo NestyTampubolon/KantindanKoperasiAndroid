@@ -80,6 +80,11 @@ interface ApiService {
         @Path("id") id: Int
     ): Call<ResponModel>
 
+    @GET("checkoutbarang/user/{id}")
+    fun getRiwayatBarang(
+        @Path("id") id: Int
+    ): Call<ResponModel>
+
     @GET("bookingruangan/user/{id}")
     fun getRiwayatBooking(
         @Path("id") id: Int

@@ -12,6 +12,9 @@ class ResponModel {
     var pemesananmakananminumans : ArrayList<PemesananMakananMinuman> = ArrayList()
     var pemesananmakananminuman = PemesananMakananMinuman()
 
+    var pemesananbarangsnacks : ArrayList<PemesananBarangSnack> = ArrayList()
+    var pemesananbarangsnack = PemesananBarangSnack()
+
     var bookings : ArrayList<BookingRuangan> = ArrayList()
     var booking = BookingRuangan()
 

@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.PAM.kantinkoperasi.adapter.AdapterRiwayatBookingRuangan
+import com.PAM.kantinkoperasi.adapter.AdapterRiwayatPemesananBarangSnack
 import com.PAM.kantinkoperasi.adapter.AdapterRiwayatPemesananMakananMinuman
 import com.PAM.kantinkoperasi.app.ApiConfig
 import com.PAM.kantinkoperasi.helper.SharedPref
 import com.PAM.kantinkoperasi.model.BookingRuangan
+import com.PAM.kantinkoperasi.model.PemesananBarangSnack
 import com.PAM.kantinkoperasi.model.PemesananMakananMinuman
 import com.PAM.kantinkoperasi.model.ResponModel
 import com.google.gson.Gson
@@ -34,6 +36,19 @@ class RiwayatActivity : AppCompatActivity() {
                 val res = response.body()!!
                 if (res.success == 1) {
                     displayRiwayat(res.pemesananmakananminumans)
+                }
+            }
+        })
+
+        ApiConfig.instanceRetrofit.getRiwayatBarang(id).enqueue(object : Callback<ResponModel> {
+            override fun onFailure(call: Call<ResponModel>, t: Throwable) {
+
+            }
+
+            override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
+                val res = response.body()!!
+                if (res.success == 1) {
+                    displayRiwayatBarang(res.pemesananbarangsnacks)
                 }
             }
         })
@@ -84,6 +99,22 @@ class RiwayatActivity : AppCompatActivity() {
 
         })
         rv_riwayatbooking.layoutManager = layoutManager
+    }
+
+    fun displayRiwayatBarang(pemesananbarangsnack: ArrayList<PemesananBarangSnack>) {
+        val layoutManager = LinearLayoutManager(this)
+        layoutManager.orientation = LinearLayoutManager.VERTICAL
+
+        rv_riwayatbarang.adapter = AdapterRiwayatPemesananBarangSnack(pemesananbarangsnack, object : AdapterRiwayatPemesananBarangSnack.Listeners {
+            override fun onClicked(data: PemesananBarangSnack) {
+                val json = Gson().toJson(data, PemesananBarangSnack::class.java)
+                val intent = Intent(this@RiwayatActivity, RiwayatBarangSnackDetail::class.java)
+                intent.putExtra("transaksi", json)
+                startActivity(intent)
+            }
+        })
+        rv_riwayatbarang.layoutManager = layoutManager
+
     }
 
     override fun onResume() {
