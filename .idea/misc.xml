@@ -5,7 +5,6 @@
       <map>
         <entry key="..\:/Android/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/activity_splash.xml" value="0.11203703703703703" />
         <entry key="..\:/Android/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/fragment_akun.xml" value="0.264" />
-        <entry key=".\:/Android/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/fragment_home.xml" value="0.14322916666666666" />
         <entry key="..\:/Android/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/fragment_keranjang.xml" value="0.14322916666666666" />
         <entry key="..\:/Android/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/item_barangsnack.xml" value="0.14322916666666666" />
         <entry key="..\:/Android/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/item_keranjang.xml" value="0.14322916666666666" />
@@ -56,18 +55,28 @@
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_makanan.xml" value="0.16979166666666667" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_makanan_detail.xml" value="0.3333333333333333" />
+        <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_pembayaran_barang.xml" value="0.10260416666666666" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_pembayaran_makanan.xml" value="0.22" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_pemesanan_ruangan.xml" value="0.22708333333333333" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_pulsa.xml" value="0.19114583333333332" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_register.xml" value="0.16666666666666666" />
+        <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_riwayat.xml" value="0.20520833333333333" />
+        <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_riwayat_barang_snack_detail.xml" value="0.14666666666666667" />
+        <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_riwayat_booking_ruangan.xml" value="0.20520833333333333" />
+        <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_riwayat_booking_ruangan_detail.xml" value="0.20520833333333333" />
+        <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_riwayat_makanan_minuman_detail.xml" value="0.16666666666666666" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/activity_success_makanan.xml" value="0.2453125" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/fragment_akun.xml" value="0.3489583333333333" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/fragment_keranjang.xml" value="0.18541666666666667" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/fragment_keranjang_makanan.xml" value="0.10729166666666666" />
-        <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/item_barangsnack.xml" value="0.36302083333333335" />
+        <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/item_barangsnack.xml" value="0.16666666666666666" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/item_keranjang.xml" value="0.22" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/item_makananminuman.xml" value="0.22" />
+        <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/item_riwayat.xml" value="0.14666666666666667" />
+        <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/item_riwayat_barang.xml" value="0.16666666666666666" />
+        <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/item_riwayat_booking.xml" value="0.16666666666666666" />
+        <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/item_riwayat_makanan.xml" value="0.16666666666666666" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/layout/toolbar.xml" value="0.22" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/menu/bottom_nav_menu.xml" value="0.22" />
         <entry key="..\:/android/KantinKoperasi/app/src/main/res/xml/config_network.xml" value="0.36302083333333335" />
@@ -85,6 +94,7 @@
         <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/layout/activity_splash_screen2.xml" value="0.1" />
         <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/layout/fragment_akun.xml" value="0.25" />
         <entry key="..\:/xampp/htdocs/laravel/KantindanKoperasiAndroid/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key=".\:/Android/PAM/KantindanKoperasiAndroid/app/src/main/res/layout/fragment_home.xml" value="0.14322916666666666" />
       </map>
     </option>
   </component>

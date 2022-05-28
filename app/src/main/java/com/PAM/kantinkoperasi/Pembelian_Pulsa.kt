@@ -80,28 +80,28 @@ class Pembelian_Pulsa : AppCompatActivity() {
 
             checkout.pulsa = Pulsa
 
-            ApiConfig.instanceRetrofit.checkoutpulsa(checkout).enqueue(object : Callback<ResponModel> {
-                override fun onFailure(call: Call<ResponModel>, t: Throwable) {
-                    error(t.message.toString())
-                }
-
-                override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
-                    if (!response.isSuccessful) {
-                        error(response.message())
-                        return
-                    }
-                    val respon = response.body()!!
-                    if (respon.success == 1) {
-                        val jsCheckout = Gson().toJson(checkout, CheckOutPulsa::class.java)
-                        val intent1 = Intent(this@Pembelian_Pulsa, SuccessMakananActivity::class.java)
-                        intent1.putExtra("checkout", jsCheckout)
-                        startActivity(intent1)
-                    } else {
-                        error(respon.message)
-                        Toast.makeText(this@Pembelian_Pulsa, "Error:" + respon.message, Toast.LENGTH_SHORT).show()
-                    }
-                }
-            })
+//            ApiConfig.instanceRetrofit.checkoutpulsa(checkout).enqueue(object : Callback<ResponModel> {
+//                override fun onFailure(call: Call<ResponModel>, t: Throwable) {
+//                    error(t.message.toString())
+//                }
+//
+//                override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
+//                    if (!response.isSuccessful) {
+//                        error(response.message())
+//                        return
+//                    }
+//                    val respon = response.body()!!
+//                    if (respon.success == 1) {
+//                        val jsCheckout = Gson().toJson(checkout, CheckOutPulsa::class.java)
+//                        val intent1 = Intent(this@Pembelian_Pulsa, SuccessMakananActivity::class.java)
+//                        intent1.putExtra("checkout", jsCheckout)
+//                        startActivity(intent1)
+//                    } else {
+//                        error(respon.message)
+//                        Toast.makeText(this@Pembelian_Pulsa, "Error:" + respon.message, Toast.LENGTH_SHORT).show()
+//                    }
+//                }
+//            })
         }
 
 

@@ -38,18 +38,18 @@ class PulsaActivity : AppCompatActivity() {
     }
     private var listPulsa: ArrayList<Pulsa_k> = ArrayList()
     fun indexPulsa(){
-        ApiConfig.instanceRetrofit.indexPulsa().enqueue(object : Callback<ResponModel> {
-            override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
-                val res = response.body()!!
-                if (res.success == 1) {
-                    listPulsa = res.pulsa
-                    displayPulsa()
-                }
-            }
-            override fun onFailure(call: Call<ResponModel>, t: Throwable) {
-                Toast.makeText(this@PulsaActivity, "Error:" + t.message, Toast.LENGTH_SHORT).show()
-            }
-
-        })
+//        ApiConfig.instanceRetrofit.indexPulsa().enqueue(object : Callback<ResponModel> {
+//            override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
+//                val res = response.body()!!
+//                if (res.success == 1) {
+//                    listPulsa = res.pulsa
+//                    displayPulsa()
+//                }
+//            }
+//            override fun onFailure(call: Call<ResponModel>, t: Throwable) {
+//                Toast.makeText(this@PulsaActivity, "Error:" + t.message, Toast.LENGTH_SHORT).show()
+//            }
+//
+//        })
     }
 }
