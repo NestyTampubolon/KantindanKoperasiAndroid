@@ -17,7 +17,10 @@
     <color name="orange3">#ffa366</color>
     <color name="orange4">#ffc299</color>
     <color name="cyan">#ccf2ff</color>
-    <color name="blue">#4da6ff</color>
+
+    <color name="pinkNeon">#ff0066</color>
+    <color name="ToskaNeon">#33cccc</color>
+    <color name="hijauNeon">#00cc66</color>
 
 
 

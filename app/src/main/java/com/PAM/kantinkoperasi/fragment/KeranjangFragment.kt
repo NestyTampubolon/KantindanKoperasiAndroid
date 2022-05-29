@@ -19,7 +19,7 @@ class KeranjangFragment : Fragment(R.layout.fragment_keranjang) {
     lateinit var linearLayout3 : LinearLayout
 
 //    lateinit var text3 : TextView
-//    lateinit var btn_riwayat : RelativeLayout
+    lateinit var btn_toRiwayat : RelativeLayout
 
     lateinit var s: SharedPref
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -49,6 +49,9 @@ class KeranjangFragment : Fragment(R.layout.fragment_keranjang) {
 //            startActivity(intent)
 //        }
 
+        btn_toRiwayat.setOnClickListener {
+            startActivity(Intent(requireActivity(), RiwayatActivity::class.java))
+        }
     }
 
 //    fun setData() {
@@ -67,5 +70,7 @@ class KeranjangFragment : Fragment(R.layout.fragment_keranjang) {
         linearLayout1 = view.findViewById(R.id.linearLayout1)
         linearLayout2 = view.findViewById(R.id.linearLayout2)
         linearLayout3 = view.findViewById(R.id.linearLayout3)
+
+        btn_toRiwayat = view.findViewById(R.id.btn_toRiwayat)
     }
 }

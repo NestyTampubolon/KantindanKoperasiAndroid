@@ -27,7 +27,7 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/bg1">
+                android:background="@color/pinkNeon">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -74,7 +74,7 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/bg2">
+                android:background="@color/ToskaNeon">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -119,7 +119,7 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/bg3">
+                android:background="@color/purple_200">
 
                 <LinearLayout
                     android:orientation="horizontal"

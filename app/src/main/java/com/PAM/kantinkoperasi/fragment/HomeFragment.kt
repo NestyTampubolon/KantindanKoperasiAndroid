@@ -21,7 +21,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     lateinit var linearLayout4 : LinearLayout
 
 //    lateinit var text3 : TextView
-//    lateinit var btn_riwayat : RelativeLayout
+    lateinit var btn_toRiwayat : RelativeLayout
 
     lateinit var s:SharedPref
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -56,7 +56,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             startActivity(intent)
         }
 
-
+        btn_toRiwayat.setOnClickListener {
+            startActivity(Intent(requireActivity(), RiwayatActivity::class.java))
+        }
 
     }
 
@@ -77,6 +79,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         linearLayout2 = view.findViewById(R.id.linearLayout2)
         linearLayout3 = view.findViewById(R.id.linearLayout3)
         linearLayout4 = view.findViewById(R.id.linearLayout4)
+
+        btn_toRiwayat = view.findViewById(R.id.btn_toRiwayat)
     }
 
 
