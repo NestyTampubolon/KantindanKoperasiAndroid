@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RiwayatBookingRuanganDetailActivity">
+    tools:context=".RiwayatPemesananPulsaDetail">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -73,17 +74,17 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Kode Booking"
-                                android:textSize="18dp" />
+                                android:text="Kode Pemesanan"
+                                android:textSize="15dp" />
 
                             <TextView
-                                android:id="@+id/tv_kode_booking"
+                                android:id="@+id/tv_kode_transaksi"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5"
                                 android:text="Kode"
                                 android:textColor="@color/black"
-                                android:textSize="18dp" />
+                                android:textSize="15dp" />
 
                         </LinearLayout>
                         <LinearLayout
@@ -97,7 +98,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Tanggal Pemesanan"
-                                android:textSize="18dp" />
+                                android:textSize="15dp" />
 
                             <TextView
                                 android:id="@+id/tv_tanggal_pemesanan"
@@ -106,7 +107,7 @@
                                 android:layout_weight="1.5"
                                 android:text="tanggal"
                                 android:textColor="@color/black"
-                                android:textSize="18dp" />
+                                android:textSize="15dp" />
 
                         </LinearLayout>
                         <LinearLayout
@@ -119,17 +120,17 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Nama Ruangan"
-                                android:textSize="18dp" />
+                                android:text="Nomor Telephone"
+                                android:textSize="15dp" />
 
                             <TextView
-                                android:id="@+id/tv_nama_ruangan"
+                                android:id="@+id/tv_nomor_telephone"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5"
-                                android:text="nama"
+                                android:text="nomor"
                                 android:textColor="@color/black"
-                                android:textSize="18dp" />
+                                android:textSize="15dp" />
 
                         </LinearLayout>
                         <LinearLayout
@@ -142,17 +143,17 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Jam Mulai"
-                                android:textSize="18dp" />
+                                android:text="Jumlah Pulsa"
+                                android:textSize="15dp" />
 
                             <TextView
-                                android:id="@+id/tv_jam_mulai"
+                                android:id="@+id/tv_jumlah_pulsa"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5"
-                                android:text="jam"
+                                android:text="jumlah"
                                 android:textColor="@color/black"
-                                android:textSize="18dp" />
+                                android:textSize="15dp" />
 
                         </LinearLayout>
                         <LinearLayout
@@ -165,41 +166,17 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Jam Selesai"
-                                android:textSize="18dp" />
+                                android:text="Total Pembayaran"
+                                android:textSize="15dp" />
 
                             <TextView
-                                android:id="@+id/tv_jam_selesai"
+                                android:id="@+id/tv_total_pembayaran"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5"
-                                android:text="jam"
+                                android:text="total"
                                 android:textColor="@color/black"
-                                android:textSize="18dp" />
-
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Deskripsi"
-                                android:textSize="18dp" />
-
-                            <TextView
-                                android:id="@+id/tv_deskripsi"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1.5"
-                                android:text="deskripsi"
-                                android:lines="3"
-                                android:textColor="@color/black"
-                                android:textSize="18dp" />
+                                android:textSize="15dp" />
 
                         </LinearLayout>
 
@@ -228,4 +205,5 @@
         </LinearLayout>
 
     </RelativeLayout>
-</LinearLayout>
+
+</RelativeLayout>

@@ -18,5 +18,9 @@ class ResponModel {
     var bookings : ArrayList<BookingRuangan> = ArrayList()
     var booking = BookingRuangan()
 
+    var pemesananpulsas : ArrayList<PemesananPulsa> = ArrayList()
+    var pemesananpulsa = PemesananPulsa()
+
+
 
 }

@@ -7,12 +7,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.PAM.kantinkoperasi.adapter.AdapterRiwayatBookingRuangan
 import com.PAM.kantinkoperasi.adapter.AdapterRiwayatPemesananBarangSnack
 import com.PAM.kantinkoperasi.adapter.AdapterRiwayatPemesananMakananMinuman
+import com.PAM.kantinkoperasi.adapter.AdapterRiwayatPemesananPulsa
 import com.PAM.kantinkoperasi.app.ApiConfig
 import com.PAM.kantinkoperasi.helper.SharedPref
-import com.PAM.kantinkoperasi.model.BookingRuangan
-import com.PAM.kantinkoperasi.model.PemesananBarangSnack
-import com.PAM.kantinkoperasi.model.PemesananMakananMinuman
-import com.PAM.kantinkoperasi.model.ResponModel
+import com.PAM.kantinkoperasi.model.*
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_riwayat.*
 import retrofit2.Call
@@ -49,6 +47,19 @@ class RiwayatActivity : AppCompatActivity() {
                 val res = response.body()!!
                 if (res.success == 1) {
                     displayRiwayatBarang(res.pemesananbarangsnacks)
+                }
+            }
+        })
+
+        ApiConfig.instanceRetrofit.getRiwayatPulsa(id).enqueue(object : Callback<ResponModel> {
+            override fun onFailure(call: Call<ResponModel>, t: Throwable) {
+
+            }
+
+            override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
+                val res = response.body()!!
+                if (res.success == 1) {
+                    displayRiwayatPulsa(res.pemesananpulsas)
                 }
             }
         })
@@ -117,6 +128,21 @@ class RiwayatActivity : AppCompatActivity() {
 
     }
 
+    fun displayRiwayatPulsa(pemesananpulsa: ArrayList<PemesananPulsa>) {
+        val layoutManager = LinearLayoutManager(this)
+        layoutManager.orientation = LinearLayoutManager.VERTICAL
+
+        rv_riwayatpulsa.adapter = AdapterRiwayatPemesananPulsa(pemesananpulsa, object : AdapterRiwayatPemesananPulsa.Listeners {
+            override fun onClicked(data: PemesananPulsa) {
+                val json = Gson().toJson(data, PemesananPulsa::class.java)
+                val intent = Intent(this@RiwayatActivity, RiwayatPemesananPulsaDetail::class.java)
+                intent.putExtra("transaksi", json)
+                startActivity(intent)
+            }
+        })
+        rv_riwayatpulsa.layoutManager = layoutManager
+
+    }
     override fun onResume() {
         getRiwayat()
         super.onResume()

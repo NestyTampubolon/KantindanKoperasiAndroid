@@ -28,7 +28,7 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/pinkNeon">
+                android:background="@drawable/bg1">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -75,7 +75,7 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/ToskaNeon">
+                android:background="@drawable/bg2">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -94,51 +94,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Barang dan Snack"
-                            android:textSize="22sp"
-                            android:textColor="@color/white" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Lihat Selengkapnya"
-                            android:textSize="14sp"
-                            android:textColor="@color/white" />
-                    </LinearLayout>
-                </LinearLayout>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="173dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp">
-
-            <LinearLayout
-                android:id="@+id/linearLayout3"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/purple_200">
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="30dp">
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pulsa"
                             android:textSize="22sp"
                             android:textColor="@color/white" />
 

@@ -69,7 +69,6 @@ class KeranjangFragment : Fragment(R.layout.fragment_keranjang) {
     private fun init(view: View){
         linearLayout1 = view.findViewById(R.id.linearLayout1)
         linearLayout2 = view.findViewById(R.id.linearLayout2)
-        linearLayout3 = view.findViewById(R.id.linearLayout3)
 
         btn_toRiwayat = view.findViewById(R.id.btn_toRiwayat)
     }

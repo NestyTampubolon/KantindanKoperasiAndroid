@@ -37,13 +37,12 @@ class SuccessMakananActivity : AppCompatActivity() {
     }
 
     fun setValues() {
-        val jsCheckout = intent.getStringExtra("checkout")
-        nominal = Integer.valueOf(intent.getStringExtra("extra")!!)
-        tv_nominal.text = Helper().gantiRupiah(nominal)
         val jenis = intent.getStringExtra("jenis")
 
-
         if(jenis == "barang"){
+            val jsCheckout = intent.getStringExtra("checkout")
+            nominal = Integer.valueOf(intent.getStringExtra("extra")!!)
+            tv_nominal.text = Helper().gantiRupiah(nominal)
             val checkoutBarang = Gson().fromJson(jsCheckout, CheckoutBarang::class.java)
             // hapus keranjang
             val myDb = MyDatabaseBarangSnack.getInstance(this)!!
@@ -51,15 +50,19 @@ class SuccessMakananActivity : AppCompatActivity() {
                 myDb.daoBarangSnack().deleteById(BarangSnack.id_barang_snack)
             }
         }else if(jenis == "produk"){
+            val jsCheckout = intent.getStringExtra("checkout")
+            nominal = Integer.valueOf(intent.getStringExtra("extra")!!)
+            tv_nominal.text = Helper().gantiRupiah(nominal)
             val checkoutMakanan = Gson().fromJson(jsCheckout, CheckoutMakanan::class.java)
             // hapus keranjang
             val myDb = MyDatabase.getInstance(this)!!
             for (MakananMinuman in checkoutMakanan.produks){
                 myDb.daoKeranjangMakananMinuman().deleteById(MakananMinuman.id_makanan_minuman)
             }
+        }else if(jenis == "pulsa"){
+            nominal = Integer.valueOf(intent.getStringExtra("total_harga")!!)
+            tv_nominal.text = Helper().gantiRupiah(nominal)
         }
-
-
 
     }
 

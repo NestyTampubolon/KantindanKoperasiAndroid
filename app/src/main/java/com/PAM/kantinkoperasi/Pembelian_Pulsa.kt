@@ -11,16 +11,14 @@ import android.widget.Toast
 import com.PAM.kantinkoperasi.app.ApiConfig
 import com.PAM.kantinkoperasi.helper.Helper
 import com.PAM.kantinkoperasi.helper.SharedPref
-import com.PAM.kantinkoperasi.model.CheckOutPulsa
-import com.PAM.kantinkoperasi.model.ResponModel
-import com.PAM.kantinkoperasi.room.MyDatabasePulsa
+import com.PAM.kantinkoperasi.model.Pulsa
 import com.google.gson.Gson
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class Pembelian_Pulsa : AppCompatActivity() {
-    lateinit var myDb: MyDatabasePulsa
     var totalHarga = 0
 
     private lateinit var edt_phone : EditText
@@ -29,6 +27,7 @@ class Pembelian_Pulsa : AppCompatActivity() {
     private lateinit var edt_total : EditText
     private lateinit var btn_bayar : Button
 
+    lateinit var pulsa: Pulsa
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pembelian_pulsa)
@@ -40,10 +39,10 @@ class Pembelian_Pulsa : AppCompatActivity() {
         btn_bayar = findViewById(R.id.btn_bayar)
 
 
-        myDb = MyDatabasePulsa.getInstance(this)!!
-
-        totalHarga = Integer.valueOf(intent.getStringExtra("extra")!!)
-        tv_total.text = Helper().gantiRupiah(totalHarga)
+        val data = intent.getStringExtra("extra")
+        pulsa = Gson().fromJson<Pulsa>(data, Pulsa::class.java)
+        tv_nominal.text = pulsa.nama
+        tv_total.text = Helper().gantiRupiah(pulsa.harga)
 
         mainButton()
     }
@@ -55,53 +54,27 @@ class Pembelian_Pulsa : AppCompatActivity() {
     }
 
     private fun bayar() {
-        if (totalHarga == Integer.valueOf(edt_total.text.toString())){
+        if (pulsa.harga == Integer.valueOf(edt_total.text.toString())){
             val user = SharedPref(this).getUser()!!
+            val total_harga = pulsa.harga
 
-            val listPulsa= myDb.daoPulsa().getAll() as ArrayList
-            var total_pembayaran = 0
-            val Pulsa = ArrayList<CheckOutPulsa.Item>()
-            for (p in listPulsa) {
-                if (p.selected) {
-                    total_pembayaran = Integer.valueOf(p.harga)
-
-                    val pulsa = CheckOutPulsa.Item()
-                    pulsa.id_pulsa = "" + p.id_pulsa
-                    pulsa.nominal = "" + p.harga
-                    pulsa.total_harga = "" + Integer.valueOf(p.harga)
-                    Pulsa.add(pulsa)
+            ApiConfig.instanceRetrofit.checkoutpulsa(pulsa.id_pulsa.toString(), user.id_user.toString(),edt_phone.text.toString()).enqueue(object :
+                Callback<ResponseBody> {
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    Toast.makeText(this@Pembelian_Pulsa, "Pemesanan Pula Anda Sedang Diproses", Toast.LENGTH_SHORT).show()
+                    val intent1 = Intent(this@Pembelian_Pulsa, SuccessMakananActivity::class.java)
+                    intent1.putExtra("total_harga", "" + total_harga)
+                    intent1.putExtra("jenis", "pulsa")
+                    startActivity(intent1)
                 }
-            }
 
-            val checkout = CheckOutPulsa()
-            checkout.id_user = "" + user.id_user
-            checkout.total_pembayaran = "" + total_pembayaran
-            checkout.nomor_telephone = edt_phone.text.toString()
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
 
-            checkout.pulsa = Pulsa
+                }
 
-//            ApiConfig.instanceRetrofit.checkoutpulsa(checkout).enqueue(object : Callback<ResponModel> {
-//                override fun onFailure(call: Call<ResponModel>, t: Throwable) {
-//                    error(t.message.toString())
-//                }
-//
-//                override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
-//                    if (!response.isSuccessful) {
-//                        error(response.message())
-//                        return
-//                    }
-//                    val respon = response.body()!!
-//                    if (respon.success == 1) {
-//                        val jsCheckout = Gson().toJson(checkout, CheckOutPulsa::class.java)
-//                        val intent1 = Intent(this@Pembelian_Pulsa, SuccessMakananActivity::class.java)
-//                        intent1.putExtra("checkout", jsCheckout)
-//                        startActivity(intent1)
-//                    } else {
-//                        error(respon.message)
-//                        Toast.makeText(this@Pembelian_Pulsa, "Error:" + respon.message, Toast.LENGTH_SHORT).show()
-//                    }
-//                }
-//            })
+            })
+        }else{
+            Toast.makeText(this, "Total Pembayaran ", Toast.LENGTH_SHORT).show()
         }
 
 

@@ -65,6 +65,15 @@ interface ApiService {
     ): Call<ResponModel>
 
     @FormUrlEncoded
+    @POST("checkoutpulsa")
+    fun checkoutpulsa(
+        @Field("id_pulsa") id_pulsa: String,
+        @Field("id_user") id_user: String,
+        @Field("nomor_telephone") nomor_telephone: String,
+    ): Call<ResponseBody>
+
+
+    @FormUrlEncoded
     @POST("bookingruangan")
     fun bookingruangan(
         @Field("id_user") id_user: String,
@@ -82,6 +91,11 @@ interface ApiService {
 
     @GET("checkoutbarang/user/{id}")
     fun getRiwayatBarang(
+        @Path("id") id: Int
+    ): Call<ResponModel>
+
+    @GET("checkoutpulsa/user/{id}")
+    fun getRiwayatPulsa(
         @Path("id") id: Int
     ): Call<ResponModel>
 
