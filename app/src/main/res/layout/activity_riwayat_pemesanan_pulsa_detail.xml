@@ -32,14 +32,6 @@
                         android:text="Completed"
                         android:textColor="#8BC34A" />
 
-                    <TextView
-                        android:id="@+id/tv_tanggal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:text="01 Juni 2020, 09:45:00"
-                        android:textColor="@color/black" />
-
                 </RelativeLayout>
 
 
@@ -59,7 +51,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Informasi Booking Ruangan"
+                            android:text="Informasi Pemesanan"
                             android:textColor="@color/colorPrimary"
                             android:textSize="24dp"
                             android:textStyle="bold"/>
@@ -201,8 +193,18 @@
                 android:layout_height="1dp"
                 android:background="#F3F3F3" />
 
+            <Button
+                android:id="@+id/btn_batal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/bg_btn_batal"
+                android:text="Batalkan Pemesanan"
+                android:textColor="@color/white" />
 
         </LinearLayout>
+
 
     </RelativeLayout>
 

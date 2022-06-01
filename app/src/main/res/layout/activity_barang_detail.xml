@@ -112,7 +112,7 @@
 
             <RelativeLayout
                 android:layout_width="130dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:background="@drawable/bg_penambahan"
                 android:padding="5dp"
                 android:layout_weight="1">

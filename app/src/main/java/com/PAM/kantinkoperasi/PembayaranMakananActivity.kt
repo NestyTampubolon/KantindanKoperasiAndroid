@@ -60,6 +60,24 @@ class PembayaranMakananActivity : AppCompatActivity() {
     }
 
     private fun bayar() {
+        if (edt_nama.text.isEmpty()){
+            edt_nama.error = "Kolom nama tidak boleh kosong"
+            edt_nama.requestFocus()
+            return
+        }else if (edt_phone.text.isEmpty()){
+            edt_phone.error = "Kolom nomor handphone tidak boleh kosong"
+            edt_phone.requestFocus()
+            return
+        }else if (edt_catatan.text.isEmpty()){
+            edt_catatan.error = "Kolom catatan tidak boleh kosong"
+            edt_catatan.requestFocus()
+            return
+        } else if (edt_total.text.isEmpty()) {
+            edt_total.error = "Kolom total pembayaran tidak boleh kosong"
+            edt_total.requestFocus()
+            return
+        }
+
         if (totalHarga == Integer.valueOf(edt_total.text.toString())){
             val user = SharedPref(this).getUser()!!
 
@@ -168,6 +186,8 @@ class PembayaranMakananActivity : AppCompatActivity() {
             }
 
 
+        }else{
+            Toast.makeText(this, "Total Pembayaran tidak sesuai" , Toast.LENGTH_SHORT).show()
         }
 
 

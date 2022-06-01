@@ -54,6 +54,16 @@ class Pembelian_Pulsa : AppCompatActivity() {
     }
 
     private fun bayar() {
+        if (edt_phone.text.isEmpty()){
+            edt_phone.error = "Kolom nomor handphone tidak boleh kosong"
+            edt_phone.requestFocus()
+            return
+        }else if (edt_total.text.isEmpty()){
+            edt_total.error = "Kolom total pembayaran tidak boleh kosong"
+            edt_total.requestFocus()
+            return
+        }
+
         if (pulsa.harga == Integer.valueOf(edt_total.text.toString())){
             val user = SharedPref(this).getUser()!!
             val total_harga = pulsa.harga
@@ -74,9 +84,8 @@ class Pembelian_Pulsa : AppCompatActivity() {
 
             })
         }else{
-            Toast.makeText(this, "Total Pembayaran ", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Total Pembayaran tidak sesuai" , Toast.LENGTH_SHORT).show()
         }
-
 
     }
 

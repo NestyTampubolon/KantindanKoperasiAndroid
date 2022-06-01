@@ -50,12 +50,13 @@ class AdapterRiwayatPemesananMakananMinuman(var data: ArrayList<PemesananMakanan
         // 09:20:20 am 12/pm/am
         val formatBaru = "d MMM yyyy"
         holder.tv_tanggal.text = Helper().convertTanggal(a.tanggal_pemesanan_makanan_minuman, formatBaru)
-//        var color = context.getColor(R.color.menungu)
-//        if (a.status == "SELESAI") color = context.getColor(R.color.selesai)
-//        else if (a.status == "BATAL") color = context.getColor(R.color.batal)
-//
-//        holder.tvStatus.setTextColor(color)
 
+        var color = context.getColor(R.color.colorPrimary)
+        if  (a.status == "PERMINTAAN") color = context.getColor(R.color.purple_500)
+        else if (a.status == "VERIFIKASI") color = context.getColor(R.color.teal_700)
+        else if (a.status == "TERIMA") color = context.getColor(R.color.hijauNeon)
+
+        holder.tv_status.setTextColor(color)
         holder.layout.setOnClickListener {
             listener.onClicked(a)
         }

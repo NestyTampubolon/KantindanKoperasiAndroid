@@ -89,18 +89,39 @@ interface ApiService {
         @Path("id") id: Int
     ): Call<ResponModel>
 
+    @DELETE("checkoutmakanan/delete/{id}")
+    fun deletePemesananMakanan(
+        @Path("id") id: Int
+    ): Call<ResponseBody>
+
     @GET("checkoutbarang/user/{id}")
     fun getRiwayatBarang(
         @Path("id") id: Int
     ): Call<ResponModel>
+
+    @DELETE("checkoutbarang/delete/{id}")
+    fun deletePemesananBarang(
+        @Path("id") id: Int
+    ): Call<ResponseBody>
+
 
     @GET("checkoutpulsa/user/{id}")
     fun getRiwayatPulsa(
         @Path("id") id: Int
     ): Call<ResponModel>
 
+    @DELETE("checkoutpulsa/delete/{id}")
+    fun deletePemesananPulsa(
+        @Path("id") id: Int
+    ): Call<ResponseBody>
+
     @GET("bookingruangan/user/{id}")
     fun getRiwayatBooking(
         @Path("id") id: Int
     ): Call<ResponModel>
+
+    @DELETE("bookingruangan/delete/{id}")
+    fun deleteBookingRuangan(
+        @Path("id") id: Int
+    ): Call<ResponseBody>
 }

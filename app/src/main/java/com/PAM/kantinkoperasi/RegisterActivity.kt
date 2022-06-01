@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -19,6 +20,7 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var tv_noKTP : EditText
     lateinit var tv_noHandphone : EditText
     lateinit var btn_daftar : Button
+    lateinit var tv_login : TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -29,11 +31,18 @@ class RegisterActivity : AppCompatActivity() {
         tv_noKTP = findViewById(R.id.tv_noKTP)
         tv_noHandphone = findViewById(R.id.tv_noHandphone)
         btn_daftar = findViewById(R.id.btn_daftar)
+        tv_login = findViewById(R.id.tv_login)
 
-
+        tv_login.setOnClickListener {
+            login()
+        }
         btn_daftar.setOnClickListener {
             daftar()
         }
+    }
+
+    fun login(){
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 
     fun daftar(){

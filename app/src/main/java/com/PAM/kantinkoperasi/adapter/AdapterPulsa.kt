@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.PAM.kantinkoperasi.*
+import com.PAM.kantinkoperasi.helper.Helper
 import com.PAM.kantinkoperasi.model.Pulsa
 import com.google.gson.Gson
 
@@ -29,7 +30,7 @@ class AdapterPulsa(var activity:PulsaActivity, var data:ArrayList<Pulsa>): Recyc
     override fun onBindViewHolder(holder: Holder, position: Int) {
 
         holder.tv_nominal.text = data[position].nama
-        holder.tv_harga.text = data[position].harga.toString()
+        holder.tv_harga.text = Helper().gantiRupiah(data[position].harga)
 
         holder.layout.setOnClickListener{
             val act = Intent(activity, Pembelian_Pulsa::class.java)

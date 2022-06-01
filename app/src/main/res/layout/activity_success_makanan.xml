@@ -37,7 +37,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="20dp"
-                        android:text="Jumlah Transfer"
+                        android:text="Jumlah Pembayaran"
                         android:textColor="@color/black" />
 
                     <LinearLayout
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="20dp"
-                android:text="Pemesanan Makanan dan Minuman telah berhasil. Silahkan tunggu konfirmasi pesanan"
+                android:text="Pemesanan Anda telah berhasil. Silahkan tunggu konfirmasi pesanan."
                 android:textColor="@color/black" />
 
         </LinearLayout>
@@ -78,7 +78,7 @@
             android:layout_height="40dp"
             android:layout_alignParentBottom="true"
             android:background="@drawable/bg_btn_beli"
-            android:text="Cek status Pembayaran"
+            android:text="Lihat Riwayat Pemesanan"
             android:textAllCaps="false"
             android:textColor="@color/white" />
     </RelativeLayout>
