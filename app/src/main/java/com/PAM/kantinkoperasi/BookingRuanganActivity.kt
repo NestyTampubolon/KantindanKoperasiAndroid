@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -28,11 +29,13 @@ class BookingRuanganActivity : AppCompatActivity(){
     private lateinit var Deskripsi : EditText
     private lateinit var ButtonBatal : Button
     private lateinit var ButtonPesan : Button
+    lateinit var s: SharedPref
 
     override fun onCreate(savedInstanceState:Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pemesanan_ruangan)
 
+        s = SharedPref(this)
         TanggalPesan = findViewById(R.id.edt_tanggal_pemesanan)
         NamaRuangan = findViewById(R.id.edt_nama_ruangan)
         JamMulai = findViewById(R.id.edt_jam_mulai)
@@ -45,56 +48,73 @@ class BookingRuanganActivity : AppCompatActivity(){
 
     fun Pesan(){
         ButtonPesan.setOnClickListener {
-            val tanggalPesan = TanggalPesan.text.toString().trim()
-            val namaRuangan = NamaRuangan.text.toString().trim()
-            val jamMulai = JamMulai.text.toString().trim()
-            val jamSelesai = JamSelesai.text.toString().trim()
-            val deskripsi = Deskripsi.text.toString().trim()
+            if (s.getStatusLogin()) {
+                val tanggalPesan = TanggalPesan.text.toString().trim()
+                val namaRuangan = NamaRuangan.text.toString().trim()
+                val jamMulai = JamMulai.text.toString().trim()
+                val jamSelesai = JamSelesai.text.toString().trim()
+                val deskripsi = Deskripsi.text.toString().trim()
 
-            var kolomKosong = false
+                var kolomKosong = false
 
-            if(tanggalPesan.isEmpty()){
-                kolomKosong = true
-                NamaRuangan.error = "Field ini tidak boleh kosong"
-            }
-            if(namaRuangan.isEmpty()){
-                kolomKosong = true
-                NamaRuangan.error = "Field ini tidak boleh kosong"
-            }
-            if(jamMulai.isEmpty()){
-                kolomKosong = true
-                JamMulai.error = "Field ini tidak boleh kosong"
-            }
-            if(jamSelesai.isEmpty()){
-                kolomKosong = true
-                JamSelesai.error = "Field ini tidak boleh kosong"
-            }
-            if(deskripsi.isEmpty()){
-                kolomKosong = true
-                Deskripsi.error = "Field ini tidak boleh kosong"
-            }
-
-            TanggalPesan.setText("")
-            NamaRuangan.setText("")
-            JamMulai.setText("")
-            JamSelesai.setText("")
-            Deskripsi.setText("")
-
-            val user = SharedPref(this).getUser()!!
-
-            ApiConfig.instanceRetrofit.bookingruangan( user.id_user.toString(),tanggalPesan,namaRuangan,jamMulai,jamSelesai,deskripsi).enqueue(object :
-                Callback<ResponseBody> {
-                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                    Toast.makeText(this@BookingRuanganActivity, "Bookingan Anda Sedang Diproses", Toast.LENGTH_SHORT).show()
+                if (tanggalPesan.isEmpty()) {
+                    kolomKosong = true
+                    NamaRuangan.error = "Field ini tidak boleh kosong"
+                }
+                if (namaRuangan.isEmpty()) {
+                    kolomKosong = true
+                    NamaRuangan.error = "Field ini tidak boleh kosong"
+                }
+                if (jamMulai.isEmpty()) {
+                    kolomKosong = true
+                    JamMulai.error = "Field ini tidak boleh kosong"
+                }
+                if (jamSelesai.isEmpty()) {
+                    kolomKosong = true
+                    JamSelesai.error = "Field ini tidak boleh kosong"
+                }
+                if (deskripsi.isEmpty()) {
+                    kolomKosong = true
+                    Deskripsi.error = "Field ini tidak boleh kosong"
                 }
 
-                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                TanggalPesan.setText("")
+                NamaRuangan.setText("")
+                JamMulai.setText("")
+                JamSelesai.setText("")
+                Deskripsi.setText("")
 
-                }
+                val user = SharedPref(this).getUser()!!
 
-            })
+                ApiConfig.instanceRetrofit.bookingruangan(
+                    user.id_user.toString(),
+                    tanggalPesan,
+                    namaRuangan,
+                    jamMulai,
+                    jamSelesai,
+                    deskripsi
+                ).enqueue(object :
+                    Callback<ResponseBody> {
+                    override fun onResponse(
+                        call: Call<ResponseBody>,
+                        response: Response<ResponseBody>
+                    ) {
+                        Toast.makeText(
+                            this@BookingRuanganActivity,
+                            "Bookingan Anda Sedang Diproses",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+
+                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+
+                    }
+
+                })
+            }else {
+                this.startActivity(Intent(this, LoginActivity::class.java))
+            }
         }
-
     }
 
     fun withCalender(view: View) {
