@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.PAM.kantinkoperasi.R
+import com.PAM.kantinkoperasi.app.ApiConfig
 import com.PAM.kantinkoperasi.helper.Helper
 import com.PAM.kantinkoperasi.model.MakananMinuman
 import com.PAM.kantinkoperasi.room.MyDatabase
@@ -19,6 +20,10 @@ import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class AdapterKeranjangMakananMinuman(var activity: Activity, var data: ArrayList<MakananMinuman>, var listener: Listeners) : RecyclerView.Adapter<AdapterKeranjangMakananMinuman.Holder>() {
     class Holder(view: View) : RecyclerView.ViewHolder(view) {
@@ -75,6 +80,18 @@ class AdapterKeranjangMakananMinuman(var activity: Activity, var data: ArrayList
 
             holder.tv_jumlah.text = jumlah.toString()
             holder.tv_harga.text = Helper().gantiRupiah(harga * jumlah)
+            makananminuman.stok--
+
+            ApiConfig.instanceRetrofit.updatestok( makananminuman.id_makanan_minuman.toString(),makananminuman.stok.toString()).enqueue(object :
+                Callback<ResponseBody> {
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                }
+
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+
+                }
+
+            })
         }
 
         holder.btn_kurang.setOnClickListener {
@@ -86,6 +103,19 @@ class AdapterKeranjangMakananMinuman(var activity: Activity, var data: ArrayList
 
             holder.tv_jumlah.text = jumlah.toString()
             holder.tv_harga.text = Helper().gantiRupiah(harga * jumlah)
+
+            makananminuman.stok++
+
+            ApiConfig.instanceRetrofit.updatestok( makananminuman.id_makanan_minuman.toString(),makananminuman.stok.toString()).enqueue(object :
+                Callback<ResponseBody> {
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                }
+
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+
+                }
+
+            })
         }
 
         holder.btn_delete.setOnClickListener {

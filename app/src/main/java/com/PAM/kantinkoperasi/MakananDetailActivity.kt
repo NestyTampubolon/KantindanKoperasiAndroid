@@ -90,27 +90,32 @@ class MakananDetailActivity : AppCompatActivity() {
         var jumlah = 1
         btn_keranjang.setOnClickListener {
             jumlah = Integer.valueOf(tv_jumlah.text.toString())
-            val data = myDb.daoKeranjangMakananMinuman().getMakananMinuman(makananminuman.id_makanan_minuman)
-            if (data == null) {
-                makananminuman.jumlah = jumlah
-                insert()
-            } else {
-                data.jumlah += jumlah
-                update(data)
+            if(makananminuman.stok == 0){
+                Toast.makeText(this, "Stok makanan tidak tersedia", Toast.LENGTH_SHORT).show()
+            }else{
+                val data = myDb.daoKeranjangMakananMinuman().getMakananMinuman(makananminuman.id_makanan_minuman)
+                if (data == null) {
+                    makananminuman.jumlah = jumlah
+                    insert()
+                } else {
+                    data.jumlah += jumlah
+                    update(data)
+                }
+                makananminuman.stok -= jumlah
+                tv_stok.text = makananminuman.stok.toString()
+
+                ApiConfig.instanceRetrofit.updatestok( makananminuman.id_makanan_minuman.toString(),makananminuman.stok.toString()).enqueue(object :
+                    Callback<ResponseBody> {
+                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    }
+
+                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+
+                    }
+
+                })
             }
-            makananminuman.stok -= jumlah
-            tv_stok.text = makananminuman.stok.toString()
 
-            ApiConfig.instanceRetrofit.updatestok( makananminuman.id_makanan_minuman.toString(),makananminuman.stok.toString()).enqueue(object :
-                Callback<ResponseBody> {
-                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                }
-
-                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-
-                }
-
-            })
         }
         btn_tambah.setOnClickListener {
             jumlah = Integer.valueOf(tv_jumlah.text.toString())
@@ -165,5 +170,8 @@ class MakananDetailActivity : AppCompatActivity() {
         }
     }
 
-
+    override fun onResume() {
+        getInfo()
+        super.onResume()
+    }
 }

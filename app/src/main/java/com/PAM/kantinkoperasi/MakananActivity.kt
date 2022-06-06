@@ -36,6 +36,7 @@ class MakananActivity : AppCompatActivity() {
         rv_makanan.layoutManager = GridLayoutManager(this, 2)
 
     }
+
     private var listMakananMinuman: ArrayList<MakananMinuman> = ArrayList()
     fun getMakanan(){
         ApiConfig.instanceRetrofit.indexMakanan().enqueue(object : Callback<ResponModel> {
@@ -53,5 +54,9 @@ class MakananActivity : AppCompatActivity() {
         })
     }
 
+    override fun onResume() {
+        getMakanan()
+        super.onResume()
+    }
 
 }
